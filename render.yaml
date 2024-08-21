@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: my-fastapi-app
+    env: python
+    buildCommand: ./build.sh
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port 10000
+    plan: free
+    # Add any additional settings or environment variables here
+    envVars:
+      - key: ENV
+        value: production
+      - key: DATABASE_URL
+        value: your_database_url
+    # Specify any other build and deployment settings as needed
+
